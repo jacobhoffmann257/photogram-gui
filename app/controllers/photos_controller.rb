@@ -26,4 +26,14 @@ class PhotosController < ApplicationController
   new_photo.save
   redirect_to("/photos/"+new_photo.id.to_s)
   end
+  def update
+    update_image = params.fetch("query_image")
+    update_caption = params.fetch("query_caption")
+    update_id = params.fetch("modifiy_id")
+    the_photo = Photo.where(id: update_id).first
+    the_photo.image = update_image
+    the_photo.caption = update_caption
+    the_photo.save
+    redirect_to("/photos/"+the_photo.id.to_s)
+  end
 end
