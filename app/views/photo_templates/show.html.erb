@@ -12,17 +12,15 @@
     <dd>
       <form action= "/update/<%= @photo.id%>" method="post">
         <label for="browser_image">Image</label>
-        <input id="browser_image" type="text" name="input_image" placeholder="Enter a url for the image..." value ="<%= @photo.image%>">
+        <input id="browser_image" type="text" name="query_image" placeholder="Enter a url for the image..." value ="<%= @photo.image%>">
         <label for="browser_caption" >Caption</label>
-        <textarea id="browser_caption" name="input_caption" placeholder="Enter a caption for the photo..."><%= @photo.caption %></textarea>
+        <textarea id="browser_caption" name="query_caption" placeholder="Enter a caption for the photo..."><%= @photo.caption %></textarea>
         <button>Update Photo</button>
       </form>
     </dd>
   <dt>Delete Photo</dt>
     <dd>
-    <form action="/delete_photo/<%= @photo.id %>" method="post">
-    <button>Delete this photo</label>
-    </form>
+    <a href ="/delete_photo/<%= @photo.id %>">Delete this photo</a>
     </dd>
 </dl>
 <h2>Comments</h2>
