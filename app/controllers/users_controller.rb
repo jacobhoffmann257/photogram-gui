@@ -12,4 +12,11 @@ class UsersController < ApplicationController
   #else 
     render({template: "users_templates/show"})
   end
+  def add
+  username = params.fetch("input_username")
+  new_user = User.new
+  new_user.username = username
+  new_user.save
+  redirect_to("/users/"+new_user.username)
+  end
 end
