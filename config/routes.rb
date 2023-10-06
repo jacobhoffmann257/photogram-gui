@@ -10,4 +10,5 @@ post("/create_photo",{controller: "photos", action: "create"})
 post("/update/:modifiy_id", {controller: "photos", action: "update"})
 post("/add_comment", controller:"photos", action: "comment")
 post("/add_user", controller: "users", action:"add")
+post("/edit_user/:old_name", controller: "users", action: "update")
 end
